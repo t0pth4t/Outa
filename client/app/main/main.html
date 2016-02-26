@@ -1,0 +1,17 @@
+
+
+  <div ng-if="!main.isLoggedIn()">
+    <h1>Welcome to Outa</h1>
+    <ng-include src="'/app/account/login/login.html'"></ng-include>
+  </div>
+  <div ng-if="main.isLoggedIn()" class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h1>Hello {{main.user().name}}</h1>
+        <a type="button" class="btn btn-lg btn-block btn-success" ui-sref="new-request">New Work Request</a>
+      </div>
+
+    </div>
+
+  </div>
+
