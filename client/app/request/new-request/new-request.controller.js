@@ -1,30 +1,23 @@
 'use strict';
 
 class NewRequestCtrl {
-  constructor(Auth, $state) {
+  constructor(Auth,$http, $state) {
     this.user = {};
     this.errors = {};
     this.submitted = false;
 
     this.Auth = Auth;
     this.$state = $state;
+    this.$http = $http;
   }
 
-  new(form) {
+  createNewRequest(form) {
     this.submitted = true;
 
     if (form.$valid) {
-      this.Auth.login({
-          email: this.user.email,
-          password: this.user.password
-        })
-        .then(() => {
-          // Logged in, redirect to home
-          this.$state.go('main');
-        })
-        .catch(err => {
-          this.errors.other = err.message;
-        });
+        if (this.request) {
+          this.$http.post('/api/requests', { name: this.request.name, description: this.request.description, active: true  });
+      }
     }
   }
 }
