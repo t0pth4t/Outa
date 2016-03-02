@@ -16,7 +16,21 @@ class NewRequestCtrl {
 
     if (form.$valid) {
         if (this.request) {
-          this.$http.post('/api/requests', { name: this.request.name, description: this.request.description, active: true  });
+          this.$http.post('/api/requests', { name: this.request.name, description: this.request.description, active: true  })
+            .then(() => {
+              // Account created, redirect to home
+              this.$state.go('requests');
+            })
+            .catch(err => {
+              err = err.data;
+              this.errors = {};
+
+              // Update validity of form fields that match the mongoose errors
+              angular.forEach(err.errors, (error, field) => {
+                form[field].$setValidity('mongoose', false);
+                this.errors[field] = error.message;
+              });
+            });
       }
     }
   }

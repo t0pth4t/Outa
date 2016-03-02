@@ -6,6 +6,5 @@ angular.module('tryagainApp')
       .state('requests', {
         url: '/requests',
         templateUrl: 'app/request/requests/requests.html',
-        controller: 'RequestsCtrl'
       });
   });

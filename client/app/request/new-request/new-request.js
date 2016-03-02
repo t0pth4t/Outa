@@ -6,6 +6,5 @@ angular.module('tryagainApp')
       .state('new-request', {
         url: '/new-request',
         templateUrl: 'app/request/new-request/new-request.html',
-        controller: 'NewRequestCtrl'
       });
   });

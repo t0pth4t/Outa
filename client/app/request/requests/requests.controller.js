@@ -2,14 +2,24 @@
 
 class RequestsCtrl {
   constructor(Auth,$http, $state) {
-    this.requests = [];
+
 
     this.Auth = Auth;
     this.$state = $state;
     this.$http = $http;
+    this.requestsRows = [];
 
     $http.get('/api/requests').then(response => {
-      this.requests = response.data;
+      var data = response.data;
+
+
+      while(data.length >= 3){
+        this.requestsRows.push(data.splice(0,3))
+      }
+      if(data.length > 0){
+        this.requestsRows.push(data);
+      }
+
     });
   }
 
