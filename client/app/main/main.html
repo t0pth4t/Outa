@@ -1,16 +1,26 @@
 
+<div class="intro-header">
+  <div class="container">
 
-  <div ng-if="!main.isLoggedIn()">
-    <h1>Welcome to Outa</h1>
-  </div>
-  <div ng-if="main.isLoggedIn()" class="container">
     <div class="row">
-      <div class="col-md-12">
-        <h1>Hello {{main.user().name}}</h1>
-        <a type="button" class="btn btn-lg btn-block btn-success" ui-sref="new-request">New Work Request</a>
+      <div class="col-lg-12">
+        <div class="intro-message">
+          <h1>Outa</h1>
+          <h3>A Place To Get Work Done</h3>
+          <hr class="intro-divider">
+          <ul class="list-inline intro-social-buttons">
+            <li>
+              <a ui-sref="signup" class="btn btn-default btn-lg"> <span class="network-name">Sign Up</span></a>
+            </li>
+            <li>
+              <a ui-sref="login" class="btn btn-default btn-lg"><i class="fa fa-sign-in fa-fw"></i> <span class="network-name">Login</span></a>
+            </li>
+          </ul>
+        </div>
       </div>
-
     </div>
 
   </div>
+
+</div>
 
