@@ -9,8 +9,11 @@
           <h3>A Place To Get Work Done</h3>
           <hr class="intro-divider">
           <ul class="list-inline intro-social-buttons">
-            <li>
+            <li ng-hide="main.isLoggedIn()">
               <a ui-sref="signup" class="btn btn-default btn-lg"> <span class="network-name">Sign Up</span></a>
+            </li>
+            <li ng-show="main.isLoggedIn()">
+              <a ui-sref="new-request" class="btn btn-primary btn-lg"> <span class="network-name">Create a New Request</span></a>
             </li>
             <li>
               <a ui-sref="login" class="btn btn-default btn-lg"><i class="fa fa-sign-in fa-fw"></i> <span class="network-name">Login</span></a>
