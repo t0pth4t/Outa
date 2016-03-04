@@ -16,7 +16,11 @@ class NewRequestCtrl {
 
     if (form.$valid) {
         if (this.request) {
-          this.$http.post('/api/requests', { name: this.request.name, description: this.request.description, active: true  })
+          this.$http.post('/api/requests',
+            { name: this.request.name,
+              description: this.request.description,
+              imageUrl: this.request.imageUrl,
+              active: true  })
             .then(() => {
               // Account created, redirect to home
               this.$state.go('requests');

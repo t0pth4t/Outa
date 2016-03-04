@@ -10,7 +10,7 @@
   <div class="row" ng-repeat="requests in requestsCtrl.requestsRows">
     <div class="col-md-4 portfolio-item" ng-repeat="request in requests">
       <a href="#">
-        <img class="img-responsive" src="http://placehold.it/700x400" alt="">
+        <img class="img-responsive" ng-src="{{request.imageUrl}}" alt="">
       </a>
       <h3>
         <a href="#">{{request.name}}</a>
