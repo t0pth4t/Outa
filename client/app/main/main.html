@@ -15,6 +15,9 @@
             <li ng-show="main.isLoggedIn()">
               <a ui-sref="new-request" class="btn btn-primary btn-lg"> <span class="network-name">Create a New Request</span></a>
             </li>
+            <li ng-show="main.isLoggedIn()">
+              <a ui-sref="requests" class="btn btn-info btn-lg"> <span class="network-name">View Requests</span></a>
+            </li>
             <li>
               <a ui-sref="login" class="btn btn-default btn-lg"><i class="fa fa-sign-in fa-fw"></i> <span class="network-name">Login</span></a>
             </li>

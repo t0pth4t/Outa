@@ -9,8 +9,8 @@
   <!-- Projects Row -->
   <div class="row" ng-repeat="requests in requestsCtrl.requestsRows">
     <div class="col-md-4 portfolio-item" ng-repeat="request in requests">
-      <a href="#">
-        <img class="img-responsive" ng-src="{{request.imageUrl}}" alt="">
+      <a ui-sref="request({ id: request._id })">
+        <img class="img-responsive" ng-src="{{request.imageUrl}}" alt="" style="height:200px;width:360px">
       </a>
       <h3>
         <a href="#">{{request.name}}</a>
