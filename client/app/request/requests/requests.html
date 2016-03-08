@@ -13,7 +13,7 @@
         <img class="img-responsive" ng-src="{{request.imageUrl}}" alt="" style="height:200px;width:360px">
       </a>
       <h3>
-        <a href="#">{{request.name}}</a>
+        <a ui-sref="request({ id: request._id })">{{request.name}}</a>
       </h3>
       <p>{{request.description}}</p>
     </div>

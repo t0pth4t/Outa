@@ -5,10 +5,18 @@ class NewRequestCtrl {
     this.user = {};
     this.errors = {};
     this.submitted = false;
-
+    this.images = [];
     this.Auth = Auth;
     this.$state = $state;
     this.$http = $http;
+  }
+
+  addNewImageUrl(){
+    this.images.push({id: this.images.length, url: ''});
+  }
+
+  removeImageUrl(){
+    this.images.pop();
   }
 
   createNewRequest(form) {
